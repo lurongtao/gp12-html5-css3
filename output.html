@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>output</title>
+  <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+</head>
+<body>
+    <form method="get" id="myForm" action="article.html" oninput="x.value=parseInt(a.value)+parseInt(b.value)">
+      0
+      <input type="range" name="a" id="a" value="50">
+      100
+      +<input type="number" name="b" id="b" value="50">
+      =<output name="x" for="a b" id="x"></output>
+
+      <input type="submit" value="click">
+    </form>
+
+    <button>submit</button>
+
+    <script>
+      $(() => {
+        $('button').on('click', () => {
+          $.ajax({
+            url: './article.html',
+            type: 'post',
+            data: $('#myForm').serialize(),
+            success(res) {
+              console.log(res)
+            }
+          })
+        })
+      })
+    </script>
+</body>
+</html>

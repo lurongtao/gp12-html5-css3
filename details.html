@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>details & summary</title>
+  <style>
+
+    div {
+        width: 7%;
+        margin: 0 auto;
+        text-align: center;
+    }
+    ::-webkit-details-marker {
+        display:none;
+    }
+    ::-moz-list-bullet {
+        font-size: 0;
+        float: left;
+    }
+    details {
+        position:relative;
+        background:#f5f5f5;
+        width: 300px;
+    }
+    summary {
+        font-weight:bolder;
+        cursor:pointer;
+        user-select: none;
+        outline: 0;
+        width: 300px;
+    }
+    ul {
+      width: 300px;
+    }
+    li {
+        border:1px solid #eee;
+        border-top : 0;
+        list-style: none;
+        /* width: 300px; */
+    }
+    /* 实现动画的原理 */
+    summary::after {
+        content: '';
+        width: 0;
+        height: 0;
+        line-height: 0;
+        font-size: 0;
+        border-left: 5px dashed transparent;
+        border-right: 5px dashed transparent;
+        border-top: 5px solid #000;
+        position: absolute;
+        top: 44%;
+        right: 8%;
+        transition:.3s ease-out;
+    }
+    [open] summary::after {
+        transform:rotate(180deg)
+    }
+    ul {
+        max-height: 0;
+        padding:0;
+        margin-top:0;
+        transition: .3s ease-out;
+        overflow: hidden;
+    }
+    [open] + ul {
+        max-height: 60px;
+    }
+  </style>
+</head>
+<body>
+    <div>
+        <details open>
+            <summary>商品管理</summary>
+        </details>
+        <ul>
+            <li>商品列表</li>
+            <li>添加商品</li>
+        </ul>
+    </div>
+    <div>
+        <details open>
+            <summary>品牌管理</summary>
+        </details>
+        <ul>
+            <li>品牌列表</li>
+            <li>添加品牌</li>
+        </ul>
+    </div>
+    <div>
+        <details open>
+            <summary>分类管理</summary>
+        </details>
+        <ul>
+            <li>分类列表</li>
+            <li>添加分类</li>
+        </ul>
+    </div>
+</body>
+</html>

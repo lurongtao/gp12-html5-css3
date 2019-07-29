@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+  progress {
+    color:orange; /*兼容IE10的已完成进度背景*/
+    border:none;
+    background: #d7d7d7;/*这个属性也可当作Chrome的已完成进度背景，只不过被下面的::progress-bar覆盖了*/      
+  }
+
+  progress::-webkit-progress-bar {
+    background: #d7d7d7;
+  }
+
+  progress::-webkit-progress-value,
+  progress::-moz-progress-bar
+  {
+    background: orange;
+  }
+  </style>
+</head>
+<body>
+  <progress value="22" max="100"></progress>
+  <script>
+    setInterval(() => {
+      document.querySelector('progress').value += 10
+    }, 1000)
+  </script>
+</body>
+</html>
