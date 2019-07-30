@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      height: 100%;
+    }
+    
+    div {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background: tomato;
+      height: 44px;
+    }
+
+    main {
+      background: greenyellow;
+      flex-grow: 1;
+    }
+
+    section {
+      background: cyan;
+      flex-grow: 1;
+    }
+
+    footer {
+      background: skyblue;
+      height: 44px;
+    }
+
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    li {
+      background: #eee;
+      height: 100px;
+      list-style: none;
+      flex-grow: 1;
+      border: solid 1px #fff;
+      width: 33.3333%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <header>header</header>
+    <main>
+      <ul>``
+        <li><p>01</p><p>03</p></li>
+        <li><p>02</p><p>03</p></li>
+        <li><p>02</p><p>03</p></li>
+        <li><p>02</p><p>03</p></li>
+        <li><p>02</p><p>03</p></li>
+        <li><p>02</p><p>03</p></li>
+        <li><p>02</p><p>03</p></li>
+        <li><p>02</p><p>03</p></li>
+        <li><p>02</p><p>03</p></li>
+        <li><p>02</p><p>03</p></li>
+      </ul>
+    </main>
+    <section>
+      content
+    </section>
+    <footer>footer</footer>
+  </div>
+</body>
+</html>
