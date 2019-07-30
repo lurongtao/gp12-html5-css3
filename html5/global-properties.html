@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    div {
+      width: 100px;
+      height: 100px;
+      background: yellowgreen;
+    }
+  </style>
+</head>
+<body >
+  <div draggable="" hidden data-url="http://www.baidu.com"></div>
+  <button id="id1">click1</button>
+  <button id="id2">click2</button>
+  <div id="content">
+
+  </div>
+  <script>
+    document.querySelector('#id1').addEventListener('click', (e) => {
+      location.hash = '#abc'
+    })
+    document.querySelector('#id2').addEventListener('click', (e) => {
+      location.hash = '#abd'
+    })
+    window.addEventListener('hashchange', () => {
+      document.querySelector('#content').innerHTML = new Date().getTime()
+    })
+  </script>
+</body>
+</html>
